@@ -1,0 +1,41 @@
+{% extends "app_aula/global/home.html" %}
+
+{% block content %}
+<div class="container-fluid mt-5">
+    {% include "app_aula/partials/search.html" with url_search="deletar" %}
+
+    {% if pessoas %}
+    <div class="d-flex justify-content-center">
+    <table class="table table-hover w-75">
+        <thead>
+        <tr>
+            <th scope="col" style="width: 10%;">ID</th>
+                <th scope="col" style="width: 20%;">Nome</th>
+                <th scope="col" style="width: 15%;">Nascimento</th>
+                <th scope="col" style="width: 20%;">Email</th>
+                <th scope="col" style="width: 20%;">País</th>
+                <th scope="col" style="width: 15%;"></th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for row in pessoas %}
+                <tr>
+                    <th scope="row" style="vertical-align: middle">{{row.id}}</th>
+                    <td style="vertical-align: middle">{{row.nome}}</td>
+                    <td style="vertical-align: middle">{{row.nascimento|date:'d/m/Y'}}</td>
+                    <td style="vertical-align: middle">{{row.email}}</td>
+                    <td style="vertical-align: middle">{{row.pais}}</td>
+                    <td><a href="{% url "deletar_id" row.id %}" class="btn btn-danger">Deletar</a></td>
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        {% else %}
+        <div class="text-center">
+            {% include "app_aula/partials/nao_encontrou_usr.html" %}
+        </div>
+    </div>
+    {% endif %}
+   
+</div>
+{% endblock content %}

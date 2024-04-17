@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Início</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "pesquisar" %}">Pesquisar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "atualizar" %}">Atualizar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "deletar" %}">Deletar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "criar" %}">Cadastrar</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto"> <!-- Adicionando a classe ml-auto para alinhar à direita -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Voltar ao topo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+  {% comment %} <div class="p-5 bg-primary text-white rounded-bottom text-center">
+      <div class="d-flex justify-content-center">
+          <img src="https://placehold.co/600x400" style="border-radius: 50%; width: 100px; height: 100px;">
+      </div>
+      <h1>Algo escrito</h1>
+      <p>ahgdiasuiashiuasuiasduiasdasdhasdsaiuhdiasuhashiuashd</p>
+  </div> {% endcomment %}

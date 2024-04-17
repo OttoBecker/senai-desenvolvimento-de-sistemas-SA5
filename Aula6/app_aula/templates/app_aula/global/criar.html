@@ -1,0 +1,35 @@
+{% extends "app_aula/global/index.html" %}
+
+{% block content %}
+<div class="container-fluid d-grid gap-3" style="width: 500px; margin-top: 50px">
+    <h1 class="text-center">Cadastro</h1>
+    <form action="{% url 'criar' %}" method="post">
+        {% csrf_token %}
+        <div class="p-2">
+            <input type="text" class="form-control my-10" placeholder="Digite seu nome" aria-label="nome" name="nome" value="{{nome}}">
+        </div>
+        <div class="input-group p-2">
+            <span class="input-group-text" id="basic-addon3">Nascimento</span>
+            <input type="date" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="nascimento" value="{{nascimento}}">
+        </div>
+        <div class="p-2"> <input type="text" class="form-control" name="email" placeholder="exemplo@exemplo.com.br"
+                aria-label="Email" value="{{email}}">
+        </div>
+        <div class="p-2"><input type="text" class="form-control" name="pais" placeholder="Digite o país para trabalhar"
+                aria-label="Pais" value="{{pais}}">
+        </div>
+        <div class="p-2 d-flex justify-content-center"><button type="submit"
+                class="btn btn-primary w-100">Salvar</button>
+        </div>
+       {% for mensagem in mensagem %}
+        <div class="alert alert-{{mensagem.severidade}}" role="alert">
+            {{mensagem.texto}}
+          </div>
+          {% endfor %}
+
+
+    </form>
+    
+
+</div>
+{% endblock content %}

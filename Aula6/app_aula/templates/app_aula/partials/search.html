@@ -1,0 +1,27 @@
+<form action="{% url url_search %}" method="post">
+    {% csrf_token %}
+    <div class="d-flex justify-content-center">
+        <div class="w-50">
+            <div class="row g-2">
+                <div class="col p-2">
+                    <input type="text" class="form-control my-10" placeholder="Nome" aria-label="nome" name="nome">
+                </div>
+                <div class="col input-group p-2">
+                    <span class="input-group-text" style="width: 40%" id="basic-addon3">Nascimento</span>
+                    <input type="date" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="nascimento">
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col p-2">
+                    <input type="text" class="form-control" name="email" placeholder="Email" aria-label="Email">
+                </div>
+                <div class="col p-2">
+                    <input type="text" class="form-control" name="pais" placeholder="País para trabalho" aria-label="Pais">
+                </div>
+            </div>
+            <div class="p-2 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+            </div>
+        </div>
+    </div>
+</form>
