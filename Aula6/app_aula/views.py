@@ -82,7 +82,6 @@ def deletar(request, id=0):
         filtro &= Q(nascimento=nascimento_filter)
     if pais_filter:
         filtro &= Q(pais__icontains=pais_filter)
-    print(filtro)
     if filtro:
         pessoa["pessoas"] = Pessoas.objects.filter(filtro)
     else:
